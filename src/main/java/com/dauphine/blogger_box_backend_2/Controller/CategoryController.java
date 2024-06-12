@@ -1,6 +1,6 @@
 package com.dauphine.blogger_box_backend_2.Controller;
 
-
+/*
 import java.util.List;
 import java.util.UUID;
 
@@ -28,30 +28,27 @@ public class CategoryController {
 
     @GetMapping
     @Operation(summary = "Retrieve all categories", description = "Retourne une liste de catégories")
-    public List<Category> getAllCategories() {}
+    public List<Category> getAllCategories() {return null;}
 
     @GetMapping("/{id}")
     @Operation(summary = "Retrieve a category by id", description = "Retourne la catégorie avec l'id spécifique")
-    public Category getCategoryById(@PathVariable UUID id){
-    }
+    public Category getCategoryById(@PathVariable UUID id){return null;}
 
     @PostMapping
     @Operation(summary = "Create a new category", description = "Crée une nouvelle catégorie")
-    public Category createCategory(@RequestBody String name){}
+    public Category createCategory(@RequestBody String name){return null;}
     }
 
     @PutMapping("/{id}")
     @Operation(summary = "Update the name of a category", description = "met à jour le nom d'une catégorie avec l'id spécifié")
-    public Category uupdateCategoryName(UUID id, CategoryDTO categoryDTO) {
-
-    }
+    public Category updateCategoryName(UUID id, CategoryDTO categoryDTO) {return new Category();}
 
     @DeleteMapping("/{id}")
     @Operation(summary = "Delete an existing category", description = "Supprime un compte avec son id")
-    public boolean deleteCategory(@PathVariable UUID id) {
-
-    }
+    public boolean deleteCategory(@PathVariable UUID id) {return false;};
 
 
 }
+
+ */
 

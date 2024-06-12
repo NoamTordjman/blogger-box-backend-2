@@ -9,17 +9,26 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
-
+@Entity
+@Table(name="Post")
 public class Post {
 
+    @Column(name="id")
+    @Id
     private UUID id;
 
+    @Column(name="title")
     private String title;
 
+    @Column(name="content")
     private String content;
 
+
+    @JoinColumn(name="category_id")
+    @ManyToOne
     private Category category;
 
+    @Column(name = "created_date")
     private LocalDateTime date_creation;
 
     public Post(UUID id, String title, String content, Category category) {

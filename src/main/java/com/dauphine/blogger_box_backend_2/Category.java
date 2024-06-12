@@ -10,11 +10,15 @@ import jakarta.persistence.Table;
 
 
 
-
+@Entity
+@Table(name="category")
 public class Category {
 
+    @Id
+    @Column(name="id")
     private UUID id;
 
+    @Column(name="name")
     private String name;
 
 

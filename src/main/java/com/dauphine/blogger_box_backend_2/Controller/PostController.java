@@ -1,5 +1,5 @@
 package com.dauphine.blogger_box_backend_2.Controller;
-
+/*
 import com.dauphine.blogger_box_backend_2.DTO.PostCreateDTO;
 import com.dauphine.blogger_box_backend_2.DTO.PostUpdateDTO;
 import com.dauphine.blogger_box_backend_2.Post;
@@ -37,3 +37,4 @@ public class PostController {
     @Operation(summary = "Delete an existing post", description = "Supprimé le post avec un ID spécifique")
     public boolean deletePost(@PathVariable UUID id) {}
 }
+   */
