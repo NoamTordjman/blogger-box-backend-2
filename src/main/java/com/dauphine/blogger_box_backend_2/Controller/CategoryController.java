@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.UUID;
 
 import com.dauphine.blogger_box_backend_2.Category;
+import com.dauphine.blogger_box_backend_2.DTO.CategoryDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,7 +42,7 @@ public class CategoryController {
 
     @PutMapping("/{id}")
     @Operation(summary = "Update the name of a category", description = "met à jour le nom d'une catégorie avec l'id spécifié")
-    public Category uupdateCategoryName(UUID id, String name) {
+    public Category uupdateCategoryName(UUID id, CategoryDTO categoryDTO) {
 
     }
 
