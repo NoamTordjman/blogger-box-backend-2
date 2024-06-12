@@ -15,7 +15,7 @@ public interface CategoryServices {
     public Category getCategoryById(@PathVariable UUID id);
     public Category createCategory(@RequestBody String name);
     public Category updateCategoryName(UUID id, CategoryDTO categoryDTO);
-    public boolean deleteCategory(@PathVariable UUID id);
+    public void deleteCategory(@PathVariable UUID id);
 
 
 }

@@ -11,9 +11,9 @@ import java.util.List;
 import java.util.UUID;
 
 public interface PostServices {
-    public List<Post> getByCreationDate();
-    public List<Post> GetByCategory(@PathVariable Long categoryId);
-    public Post createPost(@RequestBody PostCreateDTO postCreateDTO);
-    public Post updatePost(@PathVariable UUID id, @RequestBody PostUpdateDTO postUpdateDTO);
-    public boolean deletePost(@PathVariable UUID id);
+    public List<Post> getAll();
+    public List<Post> GetByCategory(@PathVariable UUID categoryId);
+    public Post createPost(@PathVariable UUID categoryId, @RequestBody PostCreateDTO postCreateDTO);
+    public Post updatePost(@PathVariable UUID id, @RequestBody PostUpdateDTO postUpdateDTO, @PathVariable UUID CategoryId);
+    public void deletePost(@PathVariable UUID id);
 }

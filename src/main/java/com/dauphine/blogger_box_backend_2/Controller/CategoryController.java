@@ -45,7 +45,7 @@ public class CategoryController {
 
     @DeleteMapping("/{id}")
     @Operation(summary = "Delete an existing category", description = "Supprime un compte avec son id")
-    public boolean deleteCategory(@PathVariable UUID id) {return false;};
+    public void deleteCategory(@PathVariable UUID id) {return false;};
 
 
 }

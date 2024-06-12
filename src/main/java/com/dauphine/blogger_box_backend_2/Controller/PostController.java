@@ -19,11 +19,11 @@ public class PostController {
 
     @GetMapping
     @Operation(summary = "get all posts ordered by creation date", description = "Retourne une liste de tous les postes rangés par date de création")
-    public List<Post> getByCreationDate() {}
+    public List<Post> getAll() {}
 
     @GetMapping("/category/{categoryId}")
     @Operation(summary = "Retrieve all posts per a category", description = "Retourne une liste de post appartenant à la catégorie")
-    public List<Post> GetByCategory(@PathVariable Long categoryId) {}
+    public List<Post> GetByCategory(@PathVariable UUID categoryId) {}
 
     @PostMapping
     @Operation(summary = "Create a new post", description = "Créer un nouveau post")
@@ -35,6 +35,6 @@ public class PostController {
 
     @DeleteMapping("/{id}")
     @Operation(summary = "Delete an existing post", description = "Supprimé le post avec un ID spécifique")
-    public boolean deletePost(@PathVariable UUID id) {}
+    public void deletePost(@PathVariable UUID id) {}
 }
    */

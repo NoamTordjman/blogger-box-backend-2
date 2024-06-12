@@ -39,6 +39,12 @@ public class Post {
         this.date_creation = LocalDateTime.now();
     }
 
+    public Post(String title, Category category) {
+        this.title = title;
+        this.category = category;
+        this.date_creation = LocalDateTime.now();
+    }
+
     public Post() {
     }
 
