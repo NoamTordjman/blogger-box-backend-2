@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.UUID;
 
+
 public interface PostServices {
     public List<Post> getAll();
     public List<Post> GetByCategory(@PathVariable UUID categoryId);

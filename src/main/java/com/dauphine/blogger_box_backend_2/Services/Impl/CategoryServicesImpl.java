@@ -4,6 +4,7 @@ import com.dauphine.blogger_box_backend_2.Category;
 import com.dauphine.blogger_box_backend_2.DTO.CategoryDTO;
 import com.dauphine.blogger_box_backend_2.Repository.CategoryRepository;
 import com.dauphine.blogger_box_backend_2.Services.CategoryServices;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +28,7 @@ public class CategoryServicesImpl implements CategoryServices {
 
     @Override
     public Category getCategoryById(UUID id) {
-        return repository.findById(id).orElse(null);
+        return repository.findById(id).orElseThrow(() -> new EntityNotFoundException("Category not found with id: " + id));
     }
 
     @Override
@@ -39,14 +40,16 @@ public class CategoryServicesImpl implements CategoryServices {
 
     @Override
     public Category updateCategoryName(UUID id, CategoryDTO categoryDTO) {
-        Category category = repository.findById(id).orElse(null);
-        assert category != null;
+        Category category = repository.findById(id).orElseThrow(() -> new EntityNotFoundException("Category not found with id: " + id));
         category.setName(categoryDTO.getName());
         return repository.save(category);
     }
 
     @Override
     public void deleteCategory(UUID id) {
+        if (!repository.existsById(id)) {
+            throw new EntityNotFoundException("Category not found with id: " + id);
+        }
         repository.deleteById(id);
     }
 }

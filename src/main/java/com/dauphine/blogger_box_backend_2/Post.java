@@ -80,7 +80,7 @@ public class Post {
         return category;
     }
 
-    public void setCategory_id(Category category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 
